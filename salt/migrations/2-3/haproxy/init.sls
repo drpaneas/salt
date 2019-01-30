@@ -29,7 +29,7 @@ kubelet_stop:
          extra_alt_names = alt_master_names()) }}
 
 haproxy:
-  file.managed:
+  caasp_file.managed:
     - name: /etc/kubernetes/manifests/haproxy.yaml
     - source: salt://migrations/2-3/haproxy/haproxy.yaml.jinja
     - template: jinja
