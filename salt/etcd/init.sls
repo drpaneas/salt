@@ -66,10 +66,6 @@ etcd:
     {%- if should_register_etcd_member %}
       - add-etcd-to-cluster
     {%- endif %}
-  # wait until etcd is actually up and running
-  caasp_etcd.healthy:
-    - watch:
-      - caasp_service: etcd
 
 /etc/sysconfig/etcd:
   file.managed:
